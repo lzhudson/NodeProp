@@ -108,12 +108,23 @@
 			<a href=""><i class="fa fa-envelope" aria-hidden="true"></i></a>
 		</div>
 		<p class="copyright">
-			Copyright @ NodeProp 2018. Todos os Direiros reservados.
+			
 		</p>
 		
 	</footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+	const copyright = document.querySelector('.copyright');
+	const generateCopyright = () => {
+		const data = new Date();
+		const year = data.getFullYear();
+		let textCopyright = `Copyright @ NodeProp 2018 - ${year}. Todos os Direiros reservados.`;
+		return textCopyright;
+	}
+	const textCopyright = document.createTextNode(generateCopyright());
+	copyright.appendChild(textCopyright);
+</script>
 <script type="text/javascript">
 	$(".btn-menu").click(function(event) {
 		$(".menu").show('slow/400/fast', function() {
@@ -125,5 +136,6 @@
 			});
 		});
 	});
+
 </script>
 </html>
